@@ -336,4 +336,63 @@ $(document).ready(function () {
         }]
     });
 
+
+    initTabs();
+
+    // Простая реализация табов
+
+    // pane-tab - это наш триггер табов.
+    // tab-content - содержание таба
+
+    function initTabs() {
+        
+        $('.tab-pane').click(onPaneClick);
+        
+    }
+
+    function onPaneClick(e) {
+        e.preventDefault();
+
+            // таргет по которому кликнули
+        var $clickedPane = $(this),
+
+            // все триггеры табов
+            $panes = $('.tab-pane'),
+
+            // содержимое всех табов
+            $tabContents = $('.tab-content'),
+            
+            
+            href = $clickedPane.data('href'),
+            
+            // нужное содержимое таба
+            $targetTabContent = $(href);
+
+
+            $panes.removeClass('active');
+
+            $clickedPane.addClass('active');
+
+            $tabContents.fadeOut();
+
+            $targetTabContent.fadeIn();
+    };
+
+    $('.field-calendar').datepicker({
+        position: 'top right'
+    });
+
+
+    var $orderForms = $('.order-forms');
+
+    $('.js-forms-trigger').click(function (e) {
+        e.preventDefault();
+
+        $orderForms.slideToggle();
+
+        $('html, body').animate({
+            'scrollTop': $orderForms.offset().top
+        });
+        
+    });
 });

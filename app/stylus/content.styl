@@ -1,6 +1,6 @@
 // TODO: fix select
 // TODO: add filter trigger on mobile (catalog.html)
-// TODO:
+// TODO: say programmers that there's forms which slide on order click
 
 a {
 	color: #ed4721;
@@ -900,6 +900,10 @@ h2 span:before {
 	color $blue
 }
 
+.colored-gray {
+	color #919191
+}
+
 .income-date {
 	display: inline-block
 	vertical-align: middle
@@ -1000,6 +1004,9 @@ h2 span:before {
 	position: relative
 	z-index: 4
 	margin-bottom: 18px
+	+below($screen-sm) {
+		display: none
+	}
 	a, span {
 		text-decoration: none
 		color #8f8f8f
@@ -1007,6 +1014,9 @@ h2 span:before {
 		margin-right: 9px
 		position: relative
 		transition all 0.3s
+		display: inline-block
+		margin-top 3px
+		padding-bottom: 3px
 		&:before {
 			content ''
 			position: absolute
@@ -1089,6 +1099,21 @@ h2 span:before {
 	padding: 0
 	text-align: center
 	vertical-align: middle
+}
+
+
+.remove {
+	right 15px
+	top 0
+	line-height: 40px
+	height: 40px
+	text-decoration: none
+	color #919191
+	background url("../images/cross-gray.png") no-repeat left 3px
+	padding 0 0 4px 20px
+	&:hover {
+		text-decoration: underline
+	}
 }
 
 .catalog-line {
@@ -1179,6 +1204,7 @@ h2 span:before {
 .checkbox {
 	display: block
 	margin 5px 0
+
 	input {
 		display: none
 		&:checked + span:after {
@@ -1203,6 +1229,7 @@ h2 span:before {
 			border 1px solid #cecece
 			position: absolute
 		}
+
 		&:after {
 			content ''
 			width: 13px
@@ -1213,6 +1240,29 @@ h2 span:before {
 			background url("../images/check.png")
 			position: absolute
 			display: none
+		}
+	}
+
+	&-radio {
+		display: inline-block
+		margin-right: 25px
+		span {
+			padding-left: 30px
+			&:before {
+				width: 20px
+				height: 20px
+				border-radius 50%
+				margin-top: -10px
+			}
+
+			&:after {
+				width: 10px
+				height: 10px
+				background $blue
+				border-radius 50%
+				left 5px
+				margin-top: -5px
+			}
 		}
 	}
 }
@@ -1368,11 +1418,13 @@ h2 span:before {
 		width: 100%
 	}
 }
+	
 .full-item-data {
 	min-height: 120px
 	line-height: 1.3
 	padding-bottom: 20px
 }
+	
 .full-item-share {
 	padding-top: 20px
 	border-top: 1px solid #e5e5e5
@@ -1439,6 +1491,189 @@ h2 span:before {
 		+below($screen-md) {
 			width: 50%
 		}
+	}
+}
+
+	
+// ORDER
+
+.order-page {
+	.layout {
+		padding-bottom: 0
+	}
+}
+
+.order-forms {
+	background-color: white
+	padding 30px 0 40px
+	display: none
+}
+
+.form-group {
+	margin 20px 0
+	label {
+		text-align: right
+	}
+	+below($screen-sm) {
+		label {
+			margin-bottom: 10px
+			text-align: left
+		}
+	}
+}
+
+
+.auth-form, .reg-form {
+	h4 {
+		color $blue
+		text-transform: uppercase
+	}
+}
+
+.table-responsive {
+	overflow-y hidden
+	overflow-x auto
+}
+
+.order-table {
+	width: 99%
+	border-collapse separate
+	text-align: center
+	min-width: 500px
+	th {
+		padding-bottom: 15px
+		color #919191
+		font-size: 12px
+		&:nth-child(1) {
+			text-align: left
+			padding-left: 20px
+		}
+	}
+		
+	tbody tr:first-child td {
+		border-top: 1px solid #dcdcdb
+	}
+
+	tbody td {
+		background-color: white
+		border-bottom 1px solid #dcdcdb
+		&:first-child {
+			border-left 1px solid #dcdcdb
+			border-radius 10px 0 0 10px
+		}
+
+		&:last-child {
+			border-right 1px solid #dcdcdb
+			border-radius 0 10px 10px 0
+		}
+	}
+		
+	.order-article, .order-code, .item-link {
+		text-align: left
+		display: block
+	}
+
+	td {
+		float: none
+		padding 0 20px
+		height: 70px
+		font-size: 12px
+		+below($screen-sm) {
+			padding 0 8px
+		}
+	}
+
+	.item-link {
+		text-decoration: none
+		color $text-color
+		&:hover {
+			color $blue
+		}
+	}
+		
+	.spinner {
+		background-color: #f6f6f6
+	}
+
+	.price {
+		font-size: 14px
+	}
+}
+
+.order {
+	padding-bottom: 30px
+}
+.order-bottom {
+	margin-top: 14px
+	+below($screen-sm) {
+		margin-top: 30px
+	}
+
+	clearfix()
+
+	.btn-blue {
+		margin-top: 29px
+		+below($screen-sm) {
+			margin-top: 0
+		}
+	}
+	+below($screen-sm) {
+		margin 20px
+		text-align: center
+	}
+
+	.order-overall {
+		float: right
+		.price-wrap {
+			margin-bottom: 15px
+		}
+		+below($screen-sm) {
+			float: none
+			margin-top: 20px
+
+		}
+	}
+
+	.manager-info {
+		display: inline-block
+		vertical-align: middle
+		line-height: 1.2
+		padding-left: 30px
+		background url("../images/manager.png") no-repeat left center
+		margin-left: 30px
+		margin-right: 50px
+		+below($screen-sm) {
+			background: none
+			padding-left: 0
+			font-size: 14px
+			margin 20px 0
+			line-height: 1.4
+			.value {
+				display: block
+			}
+		}
+	}
+
+	.manager-additional-info {
+		width: 210px
+		display: inline-block
+		vertical-align: middle
+		text-align: left
+	}
+}
+
+.auth-form {
+	.btn {
+		width: 186px
+		+below($screen-sm) {
+			width: 130px
+		}
+	}
+
+	.remember-password {
+		text-decoration: none
+		color #919191
+		margin-left: 30px
 	}
 }
 
@@ -2466,10 +2701,30 @@ span.spinner > .add:hover {
 				top: 10px
 			}
 		}
+
+		&.tab-pane {
+			margin-right 20px
+			cursor pointer
+			color #8f8f8f
+			&:before {
+				background-color: #8f8f8f
+			}
+					
+			&:first-child:after {
+				display: none
+			}
+			
+			&.active {
+				color $blue
+				&:before {
+					background-color: $red
+				}
+			}	
+		}
 	}
 
 	+below($screen-sm) {
-		font-size: 20px
+		font-size: 16px
 	}
 }
 
@@ -2548,10 +2803,20 @@ span.spinner > .add:hover {
 	}
 }
 
-.news-slider {
 
+.tab-content {
+	display: none
+	&.active {
+		display: block
+	}
 }
 
+.similar-items {
+	+below($screen-sm) {
+		display: none
+	}
+}
+	
 .news-block {
 
 	clearfix()
@@ -2717,7 +2982,7 @@ span.spinner > .add:hover {
 	}
 
 }
-
+	
 .labeled:before {
 	content ''
 	border 45px solid transparent
