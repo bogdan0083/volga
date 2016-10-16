@@ -1903,6 +1903,63 @@ span.spinner > .add:hover {
 	background-image: url('../images/number_right_h.png');
 }
 
+
+// CATEGORIES
+.categories-menu {
+	clearfix()
+	padding: 0
+	margin: 0
+	list-style none
+	li {
+		width: 25%
+		float: left
+		+below($screen-md) {
+			width: 50%
+		}
+
+		+below($screen-sm) {
+			width: 100%
+		}
+	}
+
+	a {
+		display: block
+		position: relative
+		padding 8px
+		margin 3px 0 3px 30px
+		color $blue
+		text-decoration: none
+		text-transform: uppercase
+		transition-delay 0s
+		&:hover {
+			.text-wrap {
+				border-color $red
+				color $red
+			}
+		}
+
+	}
+
+	span {
+		position: absolute
+		left -38px
+		width: 38px
+		height: 100%
+		top 50%
+		margin-top: -16px
+		background-position center
+		background-repeat: no-repeat
+	}
+
+	.text-wrap {
+		border-bottom:1px solid $blue
+		transition all 0.3s
+		display: inline-block
+		padding-bottom: 1px
+	}
+}
+
+
 //.product_block .product_add_to_basket,
 //.product_block .edit_in_basket {
 //	display: block;
@@ -2365,139 +2422,173 @@ span.spinner > .add:hover {
 	transition: background-image .3s;
 }
 
-#catalog_menu .cat-discount > span {
+#catalog_menu .cat-discount > span,
+.categories-menu .cat-discount > span {
 	background-image: url('../images/discounts.png');
 }
 
-#catalog_menu .cat-low-price > span {
+#catalog_menu .cat-low-price > span,
+.categories-menu .cat-low-price > span {
 	background-image: url('../images/rasprodaja.png');
 }
 
-#catalog_menu .cat1 > span {
+#catalog_menu .cat1 > span,
+.categories-menu .cat1 > span {
 	background-image: url('../images/cat1.png');
 }
 
-#catalog_menu .cat2 > span {
+#catalog_menu .cat2 > span,
+.categories-menu .cat2 > span {
 	background-image: url('../images/cat2.png');
 }
 
-#catalog_menu .cat3 > span {
+#catalog_menu .cat3 > span,
+.categories-menu .cat3 > span {
 	background-image: url('../images/cat3.png');
 }
 
-#catalog_menu .cat4 > span {
+#catalog_menu .cat4 > span,
+.categories-menu .cat4 > span {
 	background-image: url('../images/cat4.png');
 }
 
-#catalog_menu .cat5 > span {
+#catalog_menu .cat5 > span,
+.categories-menu .cat5 > span {
 	background-image: url('../images/cat5.png');
 }
 
-#catalog_menu .cat6 > span {
+#catalog_menu .cat6 > span,
+.categories-menu .cat6 > span {
 	background-image: url('../images/cat6.png');
 }
 
-#catalog_menu .cat7 > span {
+#catalog_menu .cat7 > span,
+.categories-menu .cat7 > span {
 	background-image: url('../images/cat7.png');
 }
 
-#catalog_menu .cat8 > span {
+#catalog_menu .cat8 > span,
+.categories-menu .cat8 > span {
 	background-image: url('../images/cat8.png');
 }
 
-#catalog_menu .cat9 > span {
+#catalog_menu .cat9 > span,
+.categories-menu .cat9 > span {
 	background-image: url('../images/cat9.png');
 }
 
-#catalog_menu .cat10 > span {
+#catalog_menu .cat10 > span,
+.categories-menu .cat10 > span {
 	background-image: url('../images/cat10.png');
 }
 
-#catalog_menu .cat11 > span {
+#catalog_menu .cat11 > span,
+.categories-menu .cat11 > span {
 	background-image: url('../images/cat11.png');
 }
 
-#catalog_menu .cat12 > span {
+#catalog_menu .cat12 > span,
+.categories-menu .cat12 > span {
 	background-image: url('../images/cat12.png');
 }
 
-#catalog_menu .cat13 > span {
+#catalog_menu .cat13 > span,
+.categories-menu .cat13 > span {
 	background-image: url('../images/cat13.png');
 }
 
-#catalog_menu .cat14 > span {
+#catalog_menu .cat14 > span,
+.categories-menu .cat14 > span {
 	background-image: url('../images/cat14.png');
 }
 
-#catalog_menu .cat15 > span {
+#catalog_menu .cat15 > span,
+.categories-menu .cat15 > span {
 	background-image: url('../images/cat15.png');
 }
 
-#catalog_menu .cat16 > span {
+#catalog_menu .cat16 > span,
+.categories-menu .cat16 > span {
 	background-image: url('../images/cat16.png');
 }
 
-#catalog_menu .cat1:hover > span {
+#catalog_menu .cat1:hover > span,
+.categories-menu .cat1:hover > span {
 	background-image: url('../images/cat1_h.png');
 }
 
-#catalog_menu .cat2:hover > span {
+#catalog_menu .cat2:hover > span,
+.categories-menu .cat2:hover > span {
 	background-image: url('../images/cat2_h.png');
 }
 
-#catalog_menu .cat3:hover > span {
+#catalog_menu .cat3:hover > span,
+.categories-menu .cat3:hover > span {
 	background-image: url('../images/cat3_h.png');
 }
 
-#catalog_menu .cat4:hover > span {
+#catalog_menu .cat4:hover > span,
+.categories-menu .cat4:hover > span {
 	background-image: url('../images/cat4_h.png');
 }
 
-#catalog_menu .cat5:hover > span {
+#catalog_menu .cat5:hover > span,
+.categories-menu .cat5:hover > span {
 	background-image: url('../images/cat5_h.png');
 }
 
-#catalog_menu .cat6:hover > span {
+#catalog_menu .cat6:hover > span,
+.categories-menu .cat6:hover > span {
 	background-image: url('../images/cat6_h.png');
 }
 
-#catalog_menu .cat7:hover > span {
+#catalog_menu .cat7:hover > span,
+.categories-menu .cat7:hover > span {
 	background-image: url('../images/cat7_h.png');
 }
 
-#catalog_menu .cat8:hover > span {
+#catalog_menu .cat8:hover > span,
+.categories-menu .cat8:hover > span {
 	background-image: url('../images/cat8_h.png');
 }
 
-#catalog_menu .cat9:hover > span {
+#catalog_menu .cat9:hover > span,
+.categories-menu .cat9:hover > span {
 	background-image: url('../images/cat9_h.png');
 }
 
-#catalog_menu .cat10:hover > span {
+#catalog_menu .cat10:hover > span,
+.categories-menu .cat10:hover > span {
 	background-image: url('../images/cat10_h.png');
 }
 
-#catalog_menu .cat11:hover > span {
+#catalog_menu .cat11:hover > span,
+.categories-menu .cat11:hover > span {
 	background-image: url('../images/cat11_h.png');
 }
 
-#catalog_menu .cat12:hover > span {
+#catalog_menu .cat12:hover > span,
+.categories-menu .cat12:hover > span {
 	background-image: url('../images/cat12_h.png');
 }
 
-#catalog_menu .cat13:hover > span {
+#catalog_menu .cat13:hover > span,
+.categories-menu .cat13:hover > span {
 	background-image: url('../images/cat13_h.png');
 }
 
-#catalog_menu .cat14:hover > span {
+#catalog_menu .cat14:hover > span,
+.categories-menu .cat14:hover > span {
 	background-image: url('../images/cat14_h.png');
 }
 
-#catalog_menu .cat15:hover > span {
+#catalog_menu .cat15:hover > span,
+.categories-menu .cat15:hover {
 	background-image: url('../images/cat15_h.png');
 }
 
-#catalog_menu .cat16:hover > span {
+#catalog_menu .cat16:hover > span,
+.categories-menu .cat16:hover {
 	background-image: url('../images/cat16_h.png');
 }
 
