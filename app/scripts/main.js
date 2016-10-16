@@ -278,6 +278,8 @@ $(document).ready(function () {
         }
     });
 
+
+    // Виджет селекта сортировки. (для добавления иконок в селект
     $.widget( "custom.iconselectmenu", $.ui.selectmenu, {
         _renderItem: function( ul, item ) {
             var li = $( "<li>" ),
@@ -293,6 +295,45 @@ $(document).ready(function () {
         }
     });
 
+
+    // селект сортировки
     $('.select').iconselectmenu();
+
+    $('.fancybox').fancybox();
+
+    // превью товара
+    $('.full-item-preview-slider').slick({
+        asNavFor: '.thumbnails-slider .wrapper',
+        dots: false,
+        arrows: false,
+        infinite: false
+    });
+
+    // переключение миниатюр
+    $('.full-item-preview-slider').on('beforeChange', function(e, slick, cur, next) {
+
+        $('.thumbnails-slider')
+            .find('.slide')
+            .removeClass('slick-current')
+            .eq(next)
+            .addClass('slick-current');
+
+    });
+
+    // миниатюры в товаре.
+    $('.thumbnails-slider .wrapper').slick({
+        slidesToShow: 4,
+        arrows: false,
+        asNavFor: '.full-item-preview-slider',
+        focusOnSelect: true,
+        mobileFirst: true,
+        infinite: false,
+        responsive: [{
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 6
+            }
+        }]
+    });
 
 });
