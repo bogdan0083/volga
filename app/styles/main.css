@@ -5037,6 +5037,38 @@ h2 span:before {
 	color: #919191;
 	margin-left: 30px;
 }
+.brands-menu {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.brands-menu:before {
+	content: "3. column.size-1of3";
+}
+@media only screen and (max-width: 880px) {
+	.brands-menu:before {
+		content: "1 column .size-1of1";
+	}
+}
+.brands-menu a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #242424;
+	transition: all 0.3s;
+	margin: 9px 0;
+	display: block;
+}
+.brands-menu a:hover .text {
+	color: #ed4721;
+	border-color: #ed4721;
+}
+.brands-menu a .text {
+	transition: all 0.3s;
+	position: relative;
+	color: #2161ed;
+	padding-bottom: 2px;
+	border-bottom: 1px solid transparent;
+}
 input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
 	display: none;
 }
@@ -5152,6 +5184,20 @@ span.spinner > .add:hover {
 	transition: all 0.3s;
 	display: inline-block;
 	padding-bottom: 1px;
+}
+.about-images {
+	background-color: #fff;
+	padding: 20px 0;
+	margin-bottom: -28px;
+	margin-top: 30px;
+	position: relative;
+}
+.about-images:after {
+	top: -11px;
+	bottom: auto;
+}
+.about-images img {
+	margin: 10px 0;
 }
 .overview {
 	list-style: none;
@@ -5728,6 +5774,11 @@ span.spinner > .add:hover {
 	padding-right: 25px;
 	display: inline-block;
 	position: relative;
+}
+.section-heading span strong {
+	color: #404040;
+	font-weight: 400;
+	text-transform: none;
 }
 .section-heading span:after {
 	content: "";

@@ -1,6 +1,9 @@
 // TODO: fix select
 // TODO: add filter trigger on mobile (catalog.html)
+// say that catalog menu is wrapped in columns automatically
 // TODO: say programmers that there's forms which slide on order click
+// TODO .inner in product block
+// TODO fix arrow up
 
 a {
 	color: #ed4721;
@@ -1677,6 +1680,42 @@ h2 span:before {
 	}
 }
 
+
+.brands-menu {
+	padding: 0
+	margin: 0
+	list-style none
+	&:before {
+		content '3. column.size-1of3'
+	}
+
+	+below($screen-sm) {
+		&:before {
+			content '1 column .size-1of1'
+		}
+	}
+	a {
+		text-decoration: none
+		text-transform: uppercase
+		color $text-color
+		transition all 0.3s
+		margin 9px 0
+		display: block
+		&:hover {
+			.text {
+				color $red
+				border-color $red
+			}
+		}
+		.text {
+			transition all 0.3s
+			position: relative
+			color $blue
+			padding-bottom: 2px
+			border-bottom: 1px solid transparent
+		}
+	}
+}
 //.product_new:after,
 //.product_hit:after,
 //.product_discount:after,
@@ -1959,7 +1998,20 @@ span.spinner > .add:hover {
 	}
 }
 
-
+.about-images {
+	background-color: white
+	padding 20px 0
+	margin-bottom: -28px
+	margin-top: 30px
+	position: relative
+	&:after {
+		top -11px
+		bottom auto
+	}
+	img {
+		margin 10px 0
+	}
+}
 //.product_block .product_add_to_basket,
 //.product_block .edit_in_basket {
 //	display: block;
@@ -2779,6 +2831,11 @@ span.spinner > .add:hover {
 		padding-right: 25px
 		display: inline-block
 		position: relative
+		strong {
+			color #404040
+			font-weight: 400
+			text-transform: none
+		}
 		&:after {
 			content ''
 			height: 1px
