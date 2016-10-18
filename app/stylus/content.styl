@@ -1680,6 +1680,9 @@ h2 span:before {
 	}
 }
 
+.map-wrapper {
+	height: 280px
+}
 
 .brands-menu {
 	padding: 0
@@ -1713,6 +1716,163 @@ h2 span:before {
 			color $blue
 			padding-bottom: 2px
 			border-bottom: 1px solid transparent
+		}
+	}
+}
+
+.contact-section {
+	padding-bottom: 25px
+	ul {
+		padding: 0
+		margin: 0
+		list-style none
+		li {
+			margin-top: 1em
+			margin-bottom: 1rem
+		}
+	}
+
+	h3 {
+		text-transform: uppercase
+		+below($screen-sm) {
+			font-size: 14px
+		}
+		img {
+			margin-right: 4px
+			margin-bottom: -3px
+		}
+	}
+}
+
+.contact-form {
+	background-color: #fff
+	margin 30px auto 10px
+	max-width: 770px
+	border 1px solid #c9c9c9
+	border-radius 7px
+	padding 10px 30px 20px
+	label {
+		margin-bottom: 6px
+		display: block
+		text-align: left
+	}
+
+	.btn, &-caption {
+		text-align: center
+	}
+
+	.btn {
+		margin: 0 auto
+		max-width: 340px
+		width: 100%
+		display: block
+		margin-top: 10px
+	}
+
+	.field-text {
+		height: 112px
+	}
+}
+
+.captcha {
+	text-align: center
+	height: 35px
+	border 1px solid #e6e6e6
+	border-radius 30px
+	padding-top: 2px
+}
+
+
+.site_enter_cabinet {
+	padding-right: 24px
+	background url('../images/arrow-blue-down.png') no-repeat right center
+	&:hover {
+		background-image: url(../images/arrow-down-red.png)
+		&:before {
+			content ''
+			height: 10px
+			bottom -8px
+			left 0
+			width: 100%
+			position: absolute
+		}
+		.cabinet-popup-nav {
+			display: block
+			text-align: left
+		}
+	}
+}
+.cabinet-popup-nav {
+	position: absolute
+	background-color: #f3f3f2
+	display: none
+	width: 150px
+	z-index: 20
+	left 0
+	top 24px
+	border 1px solid #c6c6c6
+	border-top: 0
+	margin-top: 0
+	border-radius 0 0 10px 10px
+	padding-top: 0
+	a {
+		display: block
+		padding 4px 0 4px 8px
+		border-bottom: 1px solid #e5e5e5
+		font-size: 12px
+		&:last-child {
+			border-bottom: 0
+			padding-bottom: 5px
+		}
+	}
+}
+
+.cabinet-nav {
+	margin-bottom: -1px
+	clearfix()
+	> a, > span {
+		float: left
+		width: 20%
+		height: 36px
+		text-decoration: none
+		text-align: center
+		text-transform: uppercase
+		color $text-color
+		transition all 0.3s
+		background: linear-gradient(to bottom, #fdfdfc 0%, #f5f5f5 100%)
+		display: table
+		border 1px solid #e5e5e5
+		padding 5px 5px
+		border-radius 8px 8px 0 0
+		span {
+			display: table-cell
+			vertical-align: middle
+		}
+
+		&:hover {
+			color $red
+		}
+			
+		+below($screen-md) {
+			font-size: 12px
+		}
+		+below($screen-sm) {
+			width: 50%
+			border-radius 0
+			height: 50px
+			&:last-child {
+				width: 100%
+			}
+		}
+	}
+
+	> span {
+		background white
+		border-bottom: 0
+		color $red
+		+below($screen-sm) {
+			border-bottom:1px solid #e5e5e5
+
 		}
 	}
 }

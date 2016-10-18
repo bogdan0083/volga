@@ -395,4 +395,12 @@ $(document).ready(function () {
         });
         
     });
+
+    $('.js-field-phone').on('input', function () {
+       var val = $(this).val();
+
+        if (val.indexOf('+7') === -1) {
+            $(this).val('+7');
+        }
+    });
 });
