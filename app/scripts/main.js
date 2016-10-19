@@ -403,4 +403,23 @@ $(document).ready(function () {
             $(this).val('+7');
         }
     });
+
+    $('.js-edit-trigger').editableRow({
+
+        // Если toggable: false, то ряд не переключается, но данные все равно отправляются в onClose
+        toggable: true,
+
+        // Какой класс добавлять для кнопки при переключении.
+        triggerToggleClass: 'btn-blue',
+
+        // Наша функция-событие. Срабатывает когда мы закрываем редактирование.
+
+        // rowArray - это массив с данными обо всех инпутах в ряду.
+        // id - это айди кнопки (триггера), которая вызывает редактирование.
+        // Подробнее - в консоли
+        onClose: function(rowArray, id) {
+            console.log(rowArray);
+            console.log(id);
+        }
+    });
 });

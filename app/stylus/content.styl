@@ -1,10 +1,10 @@
 // TODO: fix select
 // TODO: add filter trigger on mobile (catalog.html)
-// say that catalog menu is wrapped in columns automatically
+// TODO: say that catalog menu is wrapped in columns automatically
 // TODO: say programmers that there's forms which slide on order click
 // TODO .inner in product block
 // TODO fix arrow up
-
+// TODO add PT sans for ruble
 a {
 	color: #ed4721;
 }
@@ -1523,6 +1523,19 @@ h2 span:before {
 			text-align: left
 		}
 	}
+
+	.checkbox {
+		float: left
+	}
+}
+
+.form-bottomline {
+	border-top: 1px solid #e5e5e5
+	padding-top: 15px
+	.btn {
+		display: block
+		margin: 10px auto 0
+	}
 }
 
 
@@ -1802,6 +1815,7 @@ h2 span:before {
 		}
 	}
 }
+
 .cabinet-popup-nav {
 	position: absolute
 	background-color: #f3f3f2
@@ -1828,7 +1842,9 @@ h2 span:before {
 }
 
 .cabinet-nav {
-	margin-bottom: -1px
+	position: relative
+	top 1px
+	z-index: 1
 	clearfix()
 	> a, > span {
 		float: left
@@ -1874,6 +1890,144 @@ h2 span:before {
 			border-bottom:1px solid #e5e5e5
 
 		}
+	}
+}
+
+
+.cabinet-content {
+	border-top: 1px solid #e5e5e5
+	padding-top: 25px
+	background-color: white
+}
+
+
+.cabinet-edit-table {
+	width: 100%
+	vertical-align: middle
+	
+	tr {
+		&:nth-child(2n) {
+			background-color: #fbfbfb
+		}
+	}
+	td {
+		float: none
+		height: 54px
+		padding-top 10px
+		padding-bottom: 10px
+		vertical-align: middle
+		&:first-child {
+			text-align: right
+		}
+
+		+below($screen-sm) {
+			padding 15px 7px
+			font-size: 13px
+		}
+	}
+
+	.field-wrap	{
+		max-width: 370px
+		width: 100%
+		display: inline-block
+	}
+
+	.btn {
+		float: right
+		+below($screen-sm) {
+			margin-top: 10px
+			float: none
+			width: 100%
+			text-align: center
+			padding: 0
+		}
+	}
+
+	.table-value {
+		display: table
+		vertical-align: middle
+		height: 100%
+		float: left
+		+below($screen-sm) {
+			height auto
+		}
+		span {
+			vertical-align: middle
+			display: table-cell
+		}
+	}
+}
+
+.js-hidden {
+	display: none !important
+}
+
+.table-responsive table {
+	min-width: 600px
+}
+
+.order-history-table {
+	width: 100%
+	text-align: center
+	padding 0 5px
+	th {
+		color #919191
+		font-size: 13px
+		font-weight: 400
+		padding-bottom: 10px
+	}
+		
+	tbody tr:nth-child(2n+1) {
+		background-color: #fbfbfb
+		height: 50px
+	}
+
+	th, td {
+		float: none
+	}
+
+	td {
+		+below($screen-sm) {
+			padding 5px 4px
+		}
+	}
+}
+
+.news-inner {
+	.news-block-left {
+		margin-bottom: 20px
+	}
+
+	.news-block:last-child {
+		margin-bottom:0
+	}
+}
+
+.news-article-content {
+	line-height: 1.3
+	img {
+		margin-top: 5px
+	}
+}
+
+.delivery-block {
+	padding 5px 0 8px
+	&:last-child {
+		border-top: 1px solid #e5e5e5
+	}
+}
+
+.news-article .date {
+	color #909090
+}
+
+.cabinet-subscribe-left {
+	margin-bottom: 30px
+}
+
+.cabinet-subscribe-right {
+	.checkbox {
+		margin-bottom: 20px
 	}
 }
 //.product_new:after,

@@ -127,7 +127,7 @@
                         value: val.replace(rCRLF, "\r\n"),
                         files: field.files
                     };
-                } else if (text) {
+                } else if (type === 'select-one') {
 
                     return {
                         name: field.name,
@@ -208,7 +208,12 @@
 
         	$inputCaptions.each(function(i, item) {
 
-        		$(item).text(activeRow[i].text);
+                if ($(item).children().length) {
+                    $(item).children().eq(0).text(activeRow[i].text);
+                } else {
+                    $(item).text(activeRow[i].text);
+                }
+
 
         	});
 
