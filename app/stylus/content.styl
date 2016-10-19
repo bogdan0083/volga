@@ -1,10 +1,3 @@
-// TODO: fix select
-// TODO: add filter trigger on mobile (catalog.html)
-// TODO: say that catalog menu is wrapped in columns automatically
-// TODO: say programmers that there's forms which slide on order click
-// TODO .inner in product block
-// TODO fix arrow up
-// TODO add PT sans for ruble
 a {
 	color: #ed4721;
 }
@@ -33,9 +26,14 @@ footer ul,
 //	top: 0;
 //}
 
-#wrapper {
-	overflow: hidden;
+.body-white {
+	background-color: white
 }
+
+.bg-white {
+	background-color: #fff
+}
+
 
 .middle {
 	max-width: 1170px;
@@ -432,7 +430,8 @@ header .desc {
 	font-style: normal
 	display: inline-block
 	margin-left: 4px
-	font-size: 0.9em
+	font-size: 1em
+	font-family: 'PT Sans', sans-serif
 }
 
 .price {
@@ -695,10 +694,12 @@ h2 span:before {
 }
 
 .items-row {
-	margin-left: -18px
+	margin-left: -13px
 	margin-right: -18px
 	+below($screen-sm) {
 		text-align: center
+		margin-left: -10px
+		margin-right: -10px
 	}
 }
 
@@ -964,9 +965,9 @@ h2 span:before {
 
 .item-secondary {
 	width: 210px
-	display: inline-block
+	display: inline-blockf
 	height: 210px
-	margin 10px 14px
+	margin 10px 13px
 	text-align: center
 	border-radius 10px
 	border 1px solid #c7c7c7
@@ -1002,6 +1003,10 @@ h2 span:before {
 	padding-bottom: 30px
 }
 
+.cabinet-layout {
+	padding-bottom: 0
+}
+
 .breadcrumbs {
 	font-size 12px
 	position: relative
@@ -1019,7 +1024,7 @@ h2 span:before {
 		transition all 0.3s
 		display: inline-block
 		margin-top 3px
-		padding-bottom: 3px
+		margin-bottom: 3px
 		&:before {
 			content ''
 			position: absolute
@@ -1039,6 +1044,16 @@ h2 span:before {
 		&:before {
 			background-color: $red
 		}
+	}
+}
+
+.filter-form {
+	+below($screen-sm) {
+		display: none
+	}
+
+	+above($screen-sm) {
+		display: block !important
 	}
 }
 
@@ -1276,11 +1291,14 @@ h2 span:before {
 }
 
 .option-sort-down {
-	background: url(../images/arrow-down-red.png) no-repeat 20px center
+	background: url(../images/arrow-down-red.png) no-repeat 15px center
 }
 
+.ui-menu {
+	max-height:200px
+}
 .option-sort-up {
-	background: url(../images/arrow-blue-up.png) no-repeat 20px center
+	background: url(../images/arrow-blue-up.png) no-repeat 15px center
 }
 
 .show-hidden {
@@ -1479,8 +1497,18 @@ h2 span:before {
 			margin-bottom: 15px
 		}
 	}
+}
 
 
+// SELECT STYLES
+
+.ui-menu {
+	border-radius 0 0 8px 8px
+}
+.inner {
+	overflow: hidden
+	position: relative
+	border-radius 10px
 }
 
 .full-item-meta {
@@ -1898,6 +1926,7 @@ h2 span:before {
 	border-top: 1px solid #e5e5e5
 	padding-top: 25px
 	background-color: white
+	padding-bottom: 20px
 }
 
 
@@ -2949,12 +2978,12 @@ span.spinner > .add:hover {
 }
 
 #catalog_menu .cat15:hover > span,
-.categories-menu .cat15:hover {
+.categories-menu .cat15:hover > span {
 	background-image: url('../images/cat15_h.png');
 }
 
 #catalog_menu .cat16:hover > span,
-.categories-menu .cat16:hover {
+.categories-menu .cat16:hover > span {
 	background-image: url('../images/cat16_h.png');
 }
 
@@ -3507,7 +3536,7 @@ span.spinner > .add:hover {
 footer {
 	height: 122px;
 	width: 100%;
-	background: url('../images/footer.png') repeat-x;
+	background: url('../images/bg.png');
 	position: absolute !important;
 	left: 0;
 	bottom: 0;
@@ -3686,12 +3715,25 @@ footer {
 	right 30px
 	bottom 30%
 	transition background 0.3s
+	cursor pointer
+	z-index: 100
 	&:hover {
 		background-color: $red
+		background-image: url(../images/arrow-uo-white.png)
 	}
 
 	+below($screen-sm) {
 		right 10px
 		bottom 40px
+	}
+}
+
+.filter-trigger {
+	display: none
+	+below($screen-sm) {
+		display: block
+		margin-bottom: 20px
+		width: 100%
+		text-align: center
 	}
 }

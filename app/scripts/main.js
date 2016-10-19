@@ -289,6 +289,8 @@ $(document).ready(function () {
                 li.addClass( "ui-state-disabled" );
             }
 
+            ul.addClass('scrollbar');
+
             wrapper.addClass(item.element.data('class'));
 
             return li.append( wrapper ).appendTo( ul );
@@ -396,6 +398,17 @@ $(document).ready(function () {
         
     });
 
+    $('.js-btn-write-us').click(function (e) {
+        e.preventDefault();
+
+        $orderForms.slideToggle();
+
+        $('html, body').animate({
+            'scrollTop': $('.contact-form').offset().top - 50
+        });
+
+    });
+
     $('.js-field-phone').on('input', function () {
        var val = $(this).val();
 
@@ -403,6 +416,7 @@ $(document).ready(function () {
             $(this).val('+7');
         }
     });
+
 
     $('.js-edit-trigger').editableRow({
 
@@ -421,5 +435,22 @@ $(document).ready(function () {
             console.log(rowArray);
             console.log(id);
         }
+    });
+
+
+    // триггер для каталога
+    $('.filter-trigger').click(function (e) {
+
+        e.preventDefault();
+        console.log('as');
+        $(this).toggleClass('active').toggleClass('btn-blue');
+
+        if ($(this).hasClass('active')) {
+            $(this).text('Скрыть Фильтр');
+        } else {
+            $(this).text('Открыть Фильтр');
+        }
+
+        $('.filter-form').slideToggle();
     });
 });

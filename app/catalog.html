@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Главная</title>
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
 	<!--meta(name='description' content='')-->
 	<!--meta(name='keywords' content='')-->
 	<!-- build:css styles/main.css-->
@@ -556,25 +557,26 @@
 
 						<aside class="layout-aside col-md-3 col-sm-4 col-xs-12">
 							<div class="filter-aside">
-								<form class="filter-form">
-									<div class="filter-block filter-block-catalog">
-										<h2 class="heading" style="background: url(images/cat1_h.png) no-repeat 20px center">Бытовая техника</h2>
-										<div class="content">
-											<div class="filter-subcats filter-hidden">
-												<a href="">Блендеры и измельчители (13)</a>
-												<a href="">Бритвы электрические (9)</a>
-												<a href="">Вафельницы (8)</a>
-												<a href="">Весы (23)</a>
-												<a href="">Грили, пароварки и шашлычницы (8)</a>
-												<a href="">Блендеры и измельчители (13)</a>
-												<a href="">Бритвы электрические (9)</a>
-												<a href="">Вафельницы (8)</a>
-												<a href="">Весы (23)</a>
-												<a href="">Грили, пароварки и шашлычницы (8)</a>
-											</div>
-											<a href="" class="show-hidden">показать все</a>
+								<div class="filter-block filter-block-catalog">
+									<h2 class="heading" style="background: url(images/cat1_h.png) no-repeat 20px center">Бытовая техника</h2>
+									<div class="content">
+										<div class="filter-subcats filter-hidden">
+											<a href="">Блендеры и измельчители (13)</a>
+											<a href="">Бритвы электрические (9)</a>
+											<a href="">Вафельницы (8)</a>
+											<a href="">Весы (23)</a>
+											<a href="">Грили, пароварки и шашлычницы (8)</a>
+											<a href="">Блендеры и измельчители (13)</a>
+											<a href="">Бритвы электрические (9)</a>
+											<a href="">Вафельницы (8)</a>
+											<a href="">Весы (23)</a>
+											<a href="">Грили, пароварки и шашлычницы (8)</a>
 										</div>
+										<a href="" class="show-hidden">показать все</a>
 									</div>
+								</div>
+								<a href="" class="btn filter-trigger">Открыть фильтр</a>
+								<form class="filter-form">
 									<div class="filter-block">
 										<h2 class="heading">статус</h2>
 										<a href="" class="clear-filter">очистить</a>
@@ -763,6 +765,8 @@
 									<option disabled selected>Сортировать по</option>
 									<option value="1" data-class="option-sort-down">цене</option>
 									<option value="1" data-class="option-sort-up">цене</option>
+									<option value="1" data-class="option-sort-down">наименованию</option>
+									<option value="1" data-class="option-sort-up">наименованию</option>
 									<option value="1" data-class="option-sort-down">наименованию</option>
 									<option value="1" data-class="option-sort-up">наименованию</option>
 								</select>
@@ -1303,6 +1307,7 @@
 <script src="scripts/jquery-ui.min.js"></script>
 <script src="scripts/ion.rangeSlider.min.js"></script>
 <script src="scripts/datepicker.min.js"></script>
+<script src="scripts/editable-row.js"></script>
 <!-- endbuild-->
 
 <!-- build:js scripts/main.js-->
