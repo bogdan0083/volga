@@ -3081,6 +3081,10 @@ a:hover {
 	text-decoration: none;
 }
 
+.page-wrapper.pad-top {
+	padding-top: 145px;
+}
+
 .icon {
 	display: inline-block;
 	vertical-align: middle;
@@ -3150,7 +3154,7 @@ img {
 }
 
 .page-wrapper {
-	transition: all 0.3s;
+	transition: transform 0.3s;
 }
 
 .page-wrapper.active {
@@ -3222,7 +3226,7 @@ img {
 
 .field-calendar {
 	cursor: pointer;
-	background: #f6f6f6 url("../images/arrow-black-down.png") no-repeat right 20px center;
+	background: #f6f6f6 url("../images/arrow-black-down.png") no-repeat right 15px center;
 }
 
 .field-text {
@@ -3309,6 +3313,16 @@ input {
 	background-image: url("../images/icon_basket.png");
 }
 
+.btn-red {
+	background-color: #ed4721;
+	color: #fff;
+}
+
+.btn-red:hover {
+	background-color: transparent;
+	color: #ed4721;
+}
+
 .text-uppercase {
 	text-transform: uppercase;
 }
@@ -3332,6 +3346,19 @@ input {
 	position: absolute;
 	left: 0;
 	top: -1px;
+}
+
+.animated {
+	animation-duration: 0.6s;
+	animation-fill-mode: both;
+}
+
+.fadeInRight {
+	animation-name: fadeInRight;
+}
+
+.fadeOutRight {
+	animation-name: fadeOutRight;
 }
 
 a {
@@ -3383,6 +3410,56 @@ header {
 	background: url("../images/bg.png") 50% 0;
 }
 
+.header-fixed {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 255;
+	height: 92px;
+}
+
+.header-fixed .desc {
+	display: none;
+}
+
+.header-fixed #catalog_button {
+	display: none;
+}
+
+.header-fixed .searchbar {
+	top: 15px;
+	right: 396px;
+	width: 220px;
+}
+
+.header-fixed .product_nav {
+	top: 22px;
+	left: 93px;
+}
+
+.header-fixed #logo {
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0;
+	padding: 0;
+	width: 63px;
+}
+
+.header-fixed #logo span {
+	display: none;
+}
+
+.header-fixed .basket {
+	top: 15px;
+}
+
+.header-fixed .phone {
+	top: 22px;
+}
+
 #pull {
 	display: none;
 }
@@ -3417,6 +3494,7 @@ nav li a:hover, nav li span {
 	color: #2161ed;
 	line-height: 16px;
 	box-sizing: border-box;
+	text-transform: lowercase;
 }
 
 .site_enter a {
@@ -3510,6 +3588,7 @@ nav li a:hover, nav li span {
 	color: #2161ed;
 	text-decoration: none;
 	font-weight: 600;
+	transition: none;
 }
 
 #logo span {
@@ -4077,7 +4156,7 @@ h2 span:before {
 }
 
 .product_block .product_price_discount {
-	margin-top: -6px;
+	margin-top: -9px;
 }
 
 .product_block .current_price {
@@ -4104,6 +4183,10 @@ h2 span:before {
 	font-size: 13px;
 }
 
+.product_block.product_block_added {
+	border-color: #ed4721;
+}
+
 .crossed-price {
 	color: #919191;
 	text-decoration: line-through;
@@ -4115,7 +4198,6 @@ h2 span:before {
 
 .product_block:hover {
 	box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
-	border-color: #ed4721;
 }
 
 .colored-red {
@@ -4173,7 +4255,7 @@ h2 span:before {
 
 .item-secondary {
 	width: 210px;
-	display: inline-blockf;
+	display: inline-block;
 	height: 210px;
 	margin: 10px 13px;
 	text-align: center;
@@ -4274,6 +4356,10 @@ h2 span:before {
 	color: #919191;
 	padding-left: 15px;
 	background: url("../images/cross-gray.png") no-repeat left center;
+}
+
+.filter-block .clear-filter:hover {
+	text-decoration: underline;
 }
 
 .filter-block .heading {
@@ -4430,7 +4516,7 @@ h2 span:before {
 
 .checkbox {
 	display: block;
-	margin: 5px 0;
+	margin: 4px 0 5px;
 }
 
 .checkbox input {
@@ -4499,7 +4585,6 @@ h2 span:before {
 }
 
 .filter-hidden {
-	height: 112px;
 	overflow: hidden;
 }
 
@@ -4661,6 +4746,10 @@ h2 span:before {
 	width: 50%;
 	float: left;
 	margin: 20px 0;
+}
+
+.full-item-link a {
+	color: #242424;
 }
 
 .full-item-data {
@@ -4838,6 +4927,16 @@ h2 span:before {
 	color: #2161ed;
 }
 
+.order-table .image-link {
+	transition: all 0.3s;
+	display: block;
+}
+
+.order-table .image-link:hover {
+	-ms-transform: scale(1.13);
+	    transform: scale(1.13);
+}
+
 .order-table .spinner {
 	background-color: #f6f6f6;
 }
@@ -4927,7 +5026,11 @@ h2 span:before {
 
 .brands-menu a:hover .text {
 	color: #ed4721;
-	border-color: #ed4721;
+}
+
+.brands-menu a:hover .text:before {
+	-ms-transform: none;
+	    transform: none;
 }
 
 .brands-menu a .text {
@@ -4936,6 +5039,28 @@ h2 span:before {
 	color: #2161ed;
 	padding-bottom: 2px;
 	border-bottom: 1px solid transparent;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.brands-menu a .text:before {
+	content: "";
+	position: absolute;
+	height: 1px;
+	width: 100%;
+	background-color: #ed4721;
+	left: 0;
+	bottom: 0;
+	-ms-transform: translateX(-100%);
+	    transform: translateX(-100%);
+	transition: all 0.3s;
+}
+
+.brands-menu span {
+	display: inline-block;
+	vertical-align: top;
 }
 
 .contact-section {
@@ -4960,6 +5085,22 @@ h2 span:before {
 .contact-section h3 img {
 	margin-right: 4px;
 	margin-bottom: -3px;
+}
+
+.contact-section-col {
+	position: relative;
+}
+
+.contact-section-col:first-child:after {
+	content: "";
+	position: absolute;
+	width: 1px;
+	height: 60%;
+	-ms-transform: translateY(-35%);
+	    transform: translateY(-35%);
+	top: 50%;
+	right: 30px;
+	background-color: #c6c6c6;
 }
 
 .contact-form {
@@ -5037,6 +5178,7 @@ h2 span:before {
 	margin-top: 0;
 	border-radius: 0 0 10px 10px;
 	padding-top: 0;
+	text-transform: lowercase;
 }
 
 .cabinet-popup-nav a {
@@ -5044,6 +5186,7 @@ h2 span:before {
 	padding: 4px 0 4px 8px;
 	border-bottom: 1px solid #e5e5e5;
 	font-size: 12px;
+	text-transform: lowercase;
 }
 
 .cabinet-popup-nav a:last-child {
@@ -5175,14 +5318,6 @@ h2 span:before {
 
 .order-history-table th, .order-history-table td {
 	float: none;
-}
-
-.news-inner .news-block-left {
-	margin-bottom: 20px;
-}
-
-.news-inner .news-block:last-child {
-	margin-bottom: 0;
 }
 
 .news-article-content {
@@ -5649,7 +5784,7 @@ span.spinner > .add:hover {
 	text-transform: uppercase;
 	font-size: 12px;
 	text-decoration: none;
-	color: #426aaa;
+	color: #2161ed;
 	transition: color 0.3s;
 }
 
@@ -6124,6 +6259,18 @@ span.spinner > .add:hover {
 	background: #fff;
 }
 
+.news-inner {
+	background-color: transparent;
+}
+
+.news-inner .news-block-left {
+	margin-bottom: 10px;
+}
+
+.news-inner .news-block:last-child {
+	margin-bottom: 0;
+}
+
 .tab-content {
 	display: none;
 }
@@ -6170,11 +6317,11 @@ span.spinner > .add:hover {
 	transition: all 0.3s;
 }
 
-.news-block-content:hover:before {
+.news-block-content.active:before {
 	border-color: #2161ed;
 }
 
-.news-block-content:hover h4 {
+.news-block-content.active h4 {
 	color: #2161ed;
 }
 
@@ -6484,6 +6631,63 @@ footer .made-by a {
 
 .filter-trigger {
 	display: none;
+}
+
+.notification {
+	background-color: #fff;
+	padding: 10px;
+	border: 1px solid #ed4721;
+	transform: translateZ(0);
+	text-align: left;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.notification:before, .notification:after {
+	content: " ";
+	display: table;
+}
+
+.notification:after {
+	clear: both;
+}
+
+.notification img {
+	max-width: 50px;
+	float: left;
+	margin-right: 15px;
+}
+
+.notification .item-link {
+	overflow: hidden;
+	text-decoration: none;
+	color: #242424;
+	display: table;
+	height: 46px;
+	font-size: 13px;
+}
+
+.notification .item-link span {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.notification .item-link:hover {
+	color: #ed4721;
+}
+
+.notification h4 {
+	margin-bottom: 10px;
+	margin-top: 0;
+	color: #ed4721;
+}
+
+.notif-theme {
+	margin: 15px 0;
+}
+
+#noty_topRight_layout_container {
+	margin-top: 70px !important;
 }
 
 @font-face {
@@ -7303,6 +7507,10 @@ footer .made-by a {
 		margin-right: 25px;
 	}
 
+	.header-fixed .searchbar {
+		display: none;
+	}
+
 	.site_enter {
 		right: -7px;
 	}
@@ -7397,6 +7605,10 @@ footer .made-by a {
 }
 
 @media only screen and (max-width: 880px) {
+	.page-wrapper.pad-top {
+		padding-top: 0;
+	}
+
 	.nav-trigger {
 		position: relative;
 		margin-top: 6px;
@@ -7442,6 +7654,10 @@ footer .made-by a {
 
 	.header_top nav {
 		display: none;
+	}
+
+	.header-fixed {
+		position: relative;
 	}
 
 	.site_enter {
@@ -7624,6 +7840,10 @@ footer .made-by a {
 
 	.contact-section h3 {
 		font-size: 14px;
+	}
+
+	.contact-section-col:first-child:after {
+		display: none;
 	}
 
 	.cabinet-nav > a, .cabinet-nav > span {
@@ -7848,5 +8068,28 @@ footer .made-by a {
 
 	.datepickers-container {
 		display: none;
+	}
+}
+
+@keyframes fadeInRight {
+	from {
+		opacity: 0;
+		transform: translate3d(100%, 0, 0);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes fadeOutRight {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+		transform: translate3d(100%, 0, 0);
 	}
 }

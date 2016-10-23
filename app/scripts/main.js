@@ -64,12 +64,12 @@ $(document).ready(function () {
 
     /*------------------в корзину-----------------------*/
 
-    $('.product_block .product_add_to_basket').click(function(){
-        $(this).parent().addClass('product_in_basket');
-        $(this).parent().find('.product_add_to_basket, span.spinner').css("display","block").fadeOut();
-        $(this).parent().find('.number_in_basket, .edit_in_basket').css("display","none").fadeIn().css("display","block");
-        return false;
-    });
+    // $('.product_block .product_add_to_basket').click(function(){
+    //     $(this).parent().addClass('product_in_basket');
+    //     $(this).parent().find('.product_add_to_basket, span.spinner').css("display","block").fadeOut();
+    //     $(this).parent().find('.number_in_basket, .edit_in_basket').css("display","none").fadeIn().css("display","block");
+    //     return false;
+    // });
 
 //-----------------Скроллбар---------------------
 
@@ -244,17 +244,42 @@ $(document).ready(function () {
         ]
     });
 
+    $('.filter-hidden').each(function () {
+        console.log($(this).height());
+
+        var maxHeight = 0;
+        var $filter = $(this);
+
+
+
+       $filter.children().each(function () {
+          maxHeight += $(this).outerHeight() + 6;
+       });
+
+        $filter.attr('data-fullheight', maxHeight).css('height', '112px');
+    });
 
     $('.show-hidden').click(function (e) {
         e.preventDefault();
 
-        $(this).toggleClass('active').prev().toggleClass('filter-hidden');
+        var $hiddenFilter = $(this).prev();
+
+        $(this).toggleClass('active');
 
         if ($(this).hasClass('active')) {
             $(this).text('скрыть');
 
+            $hiddenFilter.animate({
+                'height': $hiddenFilter.data('fullheight')
+            });
+
         } else {
             $(this).text('показать все');
+
+            $hiddenFilter.animate({
+                'height': '112px'
+            });
+
         }
     });
 
@@ -417,6 +442,11 @@ $(document).ready(function () {
         }
     });
 
+    $('.news-block .btn').hover(function () {
+        $(this).parent().parent().addClass('active');
+    }, function () {
+        $(this).parent().parent().removeClass('active');
+    });
 
     $('.js-edit-trigger').editableRow({
 
@@ -453,4 +483,73 @@ $(document).ready(function () {
 
         $('.filter-form').slideToggle();
     });
+
+    (function () {
+        // фиксация шапки
+        var $window = $(window);
+
+        if ($window.width() > 880) {
+
+            var wScroll = $window.scrollTop(),
+                $header = $('.header'),
+                headerHeight = $header.outerHeight(),
+                fixedClass = 'header-fixed',
+                $pageWrapper = $('.page-wrapper'),
+                headerIsFixed = false;
+
+            function fixHeader() {
+                wScroll = $window.scrollTop();
+
+                if ((wScroll > headerHeight) && !headerIsFixed) {
+
+                    $header.addClass(fixedClass);
+                    $pageWrapper.addClass('pad-top')
+                    headerIsFixed = true;
+
+                } else if ((wScroll < headerHeight) && headerIsFixed) {
+                    $header.removeClass(fixedClass);
+                    $pageWrapper.removeClass('pad-top')
+                    headerIsFixed = false;
+
+                }
+            }
+
+
+            fixHeader();
+
+            $window.scroll(fixHeader);
+
+        }
+
+    })();
+
+
+    $('.product_add_to_basket').click(showNotification);
+
+    function showNotification(e) {
+
+        e.preventDefault();
+
+        var linkText = $(this).data('link-text');
+        var linkHref = $(this).data('href');
+        var imageSrc = $(this).data('image-src');
+
+        var n = noty({
+            text: 'NOTY - a jquery notification library!',
+            theme: 'notif-theme',
+            layout: 'topRight',
+            timeout: 4000,
+            type: 'information',
+            template: '<div class="notification">' +
+                        '<a href="" class="notification-close"></a>' +
+                        '<h4>Товар добавлен в корзину</h4>' +
+                        '<img src="' + imageSrc + '" alt="">' +
+                        '<a href="' + '" class="item-link"> <span>' + linkText + '</span></a>' +
+                        '</div>',
+            animation: {
+                open: 'animated fadeInRight', // jQuery animate function property object
+                close: 'animated fadeOutRight' // jQuery animate function property object
+            }
+        });
+    }
 });
